@@ -67,8 +67,12 @@ public sealed partial class ShellPage : Page
 
     private void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
+        NavigationViewControl.Focus(FocusState.Programmatic);
+        Application.Current.FocusVisualKind = FocusVisualKind.HighVisibility;
+        ElementSoundPlayer.State = ElementSoundPlayerState.On;
+
         TitleBarHelper.UpdateTitleBar(RequestedTheme);
-        
+
         KeyboardAccelerators.Add(BuildKeyboardAccelerator(VirtualKey.Left, VirtualKeyModifiers.Menu));
         KeyboardAccelerators.Add(BuildKeyboardAccelerator(VirtualKey.GoBack));
 

@@ -1,4 +1,5 @@
 ﻿<Page
+    XYFocusKeyboardNavigation ="Enabled"
     x:Class="GalgameManager.Views.ShellPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -40,6 +41,7 @@
             Header="{x:Bind ViewModel.SelectedPageTitle, Mode=OneWay, FallbackValue=''}">
             <NavigationView.MenuItems>
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.MultiStreamViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -62,6 +64,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.HomeViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -84,6 +87,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.LibraryViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -106,6 +110,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.CategoryViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -143,11 +148,12 @@
                 <NavigationViewItem x:Uid="Shell_PluginStore" helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.PluginStoreViewModel"
                                     Visibility="Collapsed"/>
             </NavigationView.MenuItems>
-            
+
             <!-- 暂时隐藏年度报告 -->
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem
                     Visibility="Collapsed"
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.AnnualReportViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -170,6 +176,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.InfoViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -187,7 +194,7 @@
                                         TextAlignment="Center"
                                         TextWrapping="NoWrap"
                                         Margin="0,0,0,16"/>
-                            
+
                             <!-- InfoBadge 放置在Grid内，使用定位确保在右上角 -->
                             <InfoBadge  Value="{x:Bind ViewModel.InfoPageBadgeCount, Mode=OneWay}"
                                         Visibility="{x:Bind ViewModel.InfoPageBadgeVisibility, Mode=OneWay}"
@@ -199,6 +206,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.HelpViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -221,6 +229,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.AccountViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -241,8 +250,9 @@
                         </Grid>
                     </NavigationViewItem.Content>
                 </NavigationViewItem>
-                
+
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.PluginViewModel"
                     Width="70">
                     <NavigationViewItem.Content>
@@ -262,6 +272,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem
+                    XYFocusRight="{x:Bind NavigationFrame}"
                     helpers:NavigationHelper.NavigateTo="GalgameManager.ViewModels.SettingsViewModel"
                     Width="70">
                     <NavigationViewItem.Content>

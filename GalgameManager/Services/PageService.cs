@@ -36,9 +36,9 @@ public class PageService : IPageService
         Configure<PluginStoreViewModel, PluginStorePage>();
         Configure<PluginViewModel, PluginPage>();
     }
-    
+
     private readonly Dictionary<string, Type> _pages = new();
-    
+
     public Type GetPageType(string key)
     {
         Type? pageType;

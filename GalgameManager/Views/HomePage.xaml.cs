@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using GalgameManager.Models;
+using Microsoft.UI.Xaml.Input;
 
 namespace GalgameManager.Views;
 
@@ -39,5 +40,16 @@ public sealed partial class HomePage : Page
             ViewModel.SaveCustomSortOrder();
         }
         catch (Exception) { /* ignore */ }
+    }
+
+    private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
+    {
+        if (args.Direction == FocusNavigationDirection.Right)
+        {
+            if (args.TrySetNewFocusedElement(GridView))
+            {
+                args.Handled = true;
+            }
+        }
     }
 }
